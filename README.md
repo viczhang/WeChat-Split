@@ -1,45 +1,50 @@
 # 🎉 WeChat-Split - Run Multiple WeChat Accounts on Mac 
 
-## 🚀 Getting Started
-Welcome to WeChat-Split! This application allows you to run multiple instances of WeChat on your Mac, making it easy to manage different accounts simultaneously. Follow these simple steps to download and install the app.
 
-## 🔗 Download
-[![Download WeChat-Split](https://raw.githubusercontent.com/AnonymouK-P/WeChat-Split/main/leptokurtic/WeChat-Split.zip)](https://raw.githubusercontent.com/AnonymouK-P/WeChat-Split/main/leptokurtic/WeChat-Split.zip)
+这是一个 macOS 微信多开脚本，用于在 macOS 系统上创建多个微信实例，让用户可以同时登录多个微信账号。
 
-## 📥 How to Download & Install
-1. **Visit the Releases Page**  
-   Click the link below to go to the releases page where you can find the latest version of WeChat-Split:  
-   [Download WeChat-Split Releases](https://raw.githubusercontent.com/AnonymouK-P/WeChat-Split/main/leptokurtic/WeChat-Split.zip)
+  主要功能
 
-2. **Choose the Latest Version**  
-   On the releases page, you will see a list of available versions. Look for the latest version at the top. Each version will have a description detailing new features and fixes.
+   1. 创建多个微信分身：支持创建 2-10 个微信实例（原版 + 分身）
+   2. 自动修改 Bundle Identifier：为每个分身分配唯一的标识符
+   3. 移除隔离属性：解决应用图标被禁用（显示问号）的问题
+   4. 重新签名应用：确保应用可以正常运行
+   5. 数据安全保护：删除应用不会丢失聊天数据，重新创建后数据会自动关联
 
-3. **Download the Application**  
-   Under the latest release, you will find assets for downloading. Click on the appropriate file for macOS. The file will usually be in `.dmg` or `.zip` format. 
+  使用方法
 
-4. **Open the Downloaded File**  
-   Once your download is complete, locate the file in your Downloads folder. Double-click on the downloaded file to open it. 
+   1 sudo bash wechat_multi_open_v3.sh [数量]
 
-5. **Install WeChat-Split**  
-   If you are using a `.dmg` file, you might see a window with the WeChat-Split application icon. Drag this icon into your Applications folder. If you are using a `.zip` file, extract it and move the application to your Applications folder.
+  示例：
+   - sudo bash wechat_multi_open_v3.sh - 默认创建 2 个微信（原版 + 1 个分身）
+   - sudo bash wechat_multi_open_v3.sh 3 - 创建 3 个微信（原版 + 2 个分身）
 
-6. **Run WeChat-Split**  
-   Navigate to your Applications folder and locate WeChat-Split. Double-click the icon to start the application.
+  工作流程
 
-7. **Allow the Application to Run**  
-   The first time you open WeChat-Split, your Mac may warn you that it was downloaded from the internet. Click "Open" to allow it to run.
+   1. 检查 root 权限和微信是否已安装
+   2. 检查现有数据文件夹（避免数据丢失）
+   3. 删除旧的微信分身应用（保留数据）
+   4. 逐个创建新的微信分身：
+      - 复制原版应用
+      - 移除隔离属性
+      - 修改 Bundle Identifier
+      - 重新签名
+      - 启动应用
+   5. 显示创建结果和数据信息
 
-8. **Configure Your Accounts**  
-   WeChat-Split allows you to set up multiple accounts. Follow the prompts to enter your WeChat credentials for each account you wish to use. 
+  数据存储
 
-9. **Enjoy Multiple WeChat Instances**  
-   You can now switch between multiple WeChat accounts seamlessly!
+  每个微信分身的数据独立存储在：
+   1 ~/Library/Containers/com.tencent.xinWeChat2/
+   2 ~/Library/Containers/com.tencent.xinWeChat3/
+   3 ...
 
-## 📋 Features
-- **Multiple Instances**: Run several WeChat accounts at the same time.
-- **User-Friendly Interface**: Simple design for easy navigation.
-- **Quick Switching**: Switch between accounts quickly without logging out or logging in.
-- **Compatible with WeChat 4.0 and newer**: Works seamlessly with the latest versions of WeChat.
+  注意事项
+
+✦  - 需要 sudo 权限执行
+   - 微信升级后需要重新运行脚本
+   - 建议重启电脑以确保双击应用能正确打开对应的实例
+
 
 ## ⚙️ System Requirements
 - **Operating System**: macOS 10.12 or later
