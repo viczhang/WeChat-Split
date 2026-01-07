@@ -232,6 +232,16 @@ create_wechat_clone() {
         return 1
     fi
     
+    # 4.5 配置输入法权限
+    print_info "  [4.5/5] 配置输入法权限..."
+    TCC_DB="/Library/Application Support/com.apple.TCC/TCC.db"
+    if [ -f "$TCC_DB" ]; then
+        sqlite3 "$TCC_DB" "INSERT OR REPLACE INTO access (service, client, client_type, allowed, prompt_count) 
+        SELECT service, '$bundle_id', client_type, allowed, prompt_count 
+        FROM access 
+        WHERE client = '$BASE_BUNDLE_ID' AND service IN ('kTCCServiceAccessibility', 'kTCCServicePostEvent');" 2>/dev/null || true
+    fi
+    
     # 5. 启动应用
     print_info "  [5/5] 启动微信实例..."
     nohup "$exec_file" >/dev/null 2>&1 &
